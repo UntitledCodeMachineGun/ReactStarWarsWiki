@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
 import { withErrorApi } from '@hoc-helpers/withErrorApi';
-import { getApiResource } from '@utils/network';
-import { API_PEOPLE } from '@constants/Api';
-import { getCharactersId, getCharacterImage } from '@services/getCharactersData';
 import CharactersList from '@components/Characters/CharactersList/CharactersList';
+import { getApiResource } from '@utils/network';
+import { getCharactersId, getCharacterImage } from '@services/getCharactersData';
+import { API_PEOPLE } from '@constants/Api';
 
 import styles from './Characters.module.css';
 
@@ -40,6 +41,10 @@ const Characters = ({ setErrorApi }) => {
       { characters && <CharactersList characters = {characters} /> }
     </>
   )
+}
+
+Characters.propTypes = {
+  setErrorApi: PropTypes.func
 }
 
 export default withErrorApi(Characters);
