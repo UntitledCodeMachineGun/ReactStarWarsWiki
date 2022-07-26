@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import { withErrorApi } from '../../hoc-helpers/withErrorApi';
-import { getApiResource } from '../../utils/network';
-import { API_PEOPLE } from '../../constants/Api';
-import { getCharactersId, getCharacterImage } from '../../services/getCharactersData';
-import CharactersList from '../../components/Characters/CharactersList/CharactersList';
+import { withErrorApi } from '@hoc-helpers/withErrorApi';
+import { getApiResource } from '@utils/network';
+import { API_PEOPLE } from '@constants/Api';
+import { getCharactersId, getCharacterImage } from '@services/getCharactersData';
+import CharactersList from '@components/Characters/CharactersList/CharactersList';
 
 import styles from './Characters.module.css';
 

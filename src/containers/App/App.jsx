@@ -1,4 +1,4 @@
-import Characters from '../Characters';
+import Characters from '@containers/Characters';
 
 import styles from './App.module.css';
 

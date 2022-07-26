@@ -1,7 +1,7 @@
 import {
   SWAPI_PEOPLE, HTTPS, HTTP, SWAPI_ROOT,
   GUIDE_IMG_EXTENSION, URL_IMG_PERSON
-} from "../constants/Api";
+} from "@constants/Api";
 
 const getId = (url, category) => {
   if (url.includes(HTTPS)) {
