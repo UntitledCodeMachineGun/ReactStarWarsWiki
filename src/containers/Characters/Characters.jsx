@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+
+import { withErrorApi } from '../../hoc-helpers/withErrorApi';
 import { getApiResource } from '../../utils/network';
 import { API_PEOPLE } from '../../constants/Api';
 import { getCharactersId, getCharacterImage } from '../../services/getCharactersData';
@@ -6,20 +8,26 @@ import CharactersList from '../../components/Characters/CharactersList/Character
 
 import styles from './Characters.module.css';
 
-const Characters = () => {
+const Characters = ({ setErrorApi }) => {
   const [characters, setCharacters] = useState(null);
+
 
   const getResource = async (url) => {
     const res = await getApiResource(url);
-    
-    const characterList = res.results.map(({ name, url })=> {
-      const id = getCharactersId(url);
-      const img = getCharacterImage(id);
 
-      return { id, name, url, img }
-    });
+    if (res) {
+      const characterList = res.results.map(({ name, url })=> {
+        const id = getCharactersId(url);
+        const img = getCharacterImage(id);
+  
+        return { id, name, url, img }
+      });
 
-    setCharacters(characterList);
+      setCharacters(characterList);
+      setErrorApi(false);
+    } else {
+      setErrorApi(true);
+    }
   }
 
   useEffect(() => {
@@ -28,9 +36,10 @@ const Characters = () => {
 
   return (
     <>
+      <h1>Navigation</h1>
       { characters && <CharactersList characters = {characters} /> }
     </>
   )
 }
 
-export default Characters;
+export default withErrorApi(Characters);
