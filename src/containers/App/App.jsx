@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Characters from '@containers/Characters';
 import HomePage from '@containers/HomePage';
@@ -10,7 +10,6 @@ import styles from './App.module.css';
 const App = () => {
   return (
     <>
-      <BrowserRouter>
       <div className={styles.wrapper}>
         <Header />
         <Routes>
@@ -23,7 +22,6 @@ const App = () => {
           ))}
         </Routes>
       </div>
-      </BrowserRouter>
     </>
   )
 }

@@ -1,5 +1,6 @@
 import Characters from '@containers/Characters';
 import HomePage from '@containers/HomePage';
+import NotFoundPage from '@containers/NotFoundPage';
 
 const routeConfig = [
   {
@@ -9,6 +10,11 @@ const routeConfig = [
   {
     path: '/characters',
     element: Characters
+  },
+  {
+    path: '*',
+    exact: false,
+    element: NotFoundPage
   }
 ]
 
