@@ -1,7 +1,13 @@
 import {
   SWAPI_PEOPLE, HTTPS, HTTP, SWAPI_ROOT,
-  GUIDE_IMG_EXTENSION, URL_IMG_PERSON
+  GUIDE_IMG_EXTENSION, URL_IMG_PERSON,
+  SWAPI_PARAM_PAGE
 } from "@constants/Api";
+
+export const getCharacterId = url => {
+  const pos = url.lastIndexOf(SWAPI_PARAM_PAGE);
+  return Number(url.slice(pos + SWAPI_PARAM_PAGE.length));
+}
 
 const getId = (url, category) => {
   if (url.includes(HTTPS)) {
