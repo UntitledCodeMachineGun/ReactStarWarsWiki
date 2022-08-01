@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { GUIDE_PEOPLE } from '@constants/Api'
+import UIButton from '@UI/UIButton';
 
 import styles from './CharactersNavigation.module.css';
 
@@ -14,29 +15,26 @@ const CharactersNavigation = ({
 
   return (
     <>
-      <div>
+      <div className={styles.container}>
         <Link
           to = { `/${ GUIDE_PEOPLE }/?page=${ counterPage - 1 }` }
-          className = { styles.link }
-        >
-          <button
-          onClick = { handleChangePrevious }
-          disabled = { !prevPage }
           className = { styles.buttons }
-          >
-            Previous
-          </button>
+        >
+          <UIButton
+            text = 'Previous'
+            onClick = { handleChangePrevious }
+            disabled = { !prevPage }
+          />
         </Link>
         <Link
           to = { `/${ GUIDE_PEOPLE }/?page=${ counterPage + 1 }` }
-          className = { styles.link }
-        > 
-          <button onClick={ handleChangeNext }
-          disabled = { !nextPage }
           className = { styles.buttons }
-          >
-            Next
-          </button>
+        >
+          <UIButton
+            text = 'Next'
+            onClick = { handleChangeNext }
+            disabled = { !nextPage }
+          />
         </Link> 
       </div>
     </>

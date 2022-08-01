@@ -1,4 +1,4 @@
-:root{
+:root {
   --color-white: #fff;
   --color-black: #000;
   --color-dark-gray: #10100e;
@@ -8,6 +8,7 @@
 
   --border-radius-small: 3px;
 
+  --spacing-small: 10px;
   --spacing-medium: 20px;
   --spacing-large: 30px;
 
@@ -19,6 +20,7 @@
   --font-size-header: 26px;
   --font-size-sub-header: 18px;
   --font-size-main: 16px;
+  --font-size-button: 14px;
   --font-bold: 600;
 
   --text-shadow-yellow:
