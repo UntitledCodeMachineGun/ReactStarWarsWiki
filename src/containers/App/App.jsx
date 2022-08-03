@@ -17,7 +17,7 @@ const App = () => {
             <Route
             key={index}
             path={route.path}
-            element={route.element()}
+            element={<route.element />}
             />
           ))}
         </Routes>

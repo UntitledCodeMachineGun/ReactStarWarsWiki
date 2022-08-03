@@ -1,6 +1,7 @@
 import Characters from '@containers/Characters';
 import HomePage from '@containers/HomePage';
 import NotFoundPage from '@containers/NotFoundPage';
+import PersonPage from '@containers/PersonPage/';
 
 const routeConfig = [
   {
@@ -10,6 +11,10 @@ const routeConfig = [
   {
     path: '/characters',
     element: Characters
+  },
+  {
+    path: '/characters/:id',
+    element: PersonPage
   },
   {
     path: '*',

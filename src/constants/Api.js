@@ -11,6 +11,7 @@ export const SWAPI_PEOPLE = 'people';
 
 //full path
 export const API_PEOPLE = HTTPS + SWAPI_ROOT + SWAPI_PEOPLE + SWAPI_PARAM_PAGE;
+export const API_PERSON = HTTPS + SWAPI_ROOT + SWAPI_PEOPLE;
 
 //images
 const GUIDE_ROOT_IMG = 'https://starwars-visualguide.com/assets/img/';
