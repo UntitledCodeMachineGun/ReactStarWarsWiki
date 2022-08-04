@@ -6,20 +6,20 @@ import PersonPage from '@containers/PersonPage/';
 const routeConfig = [
   {
     path: '/',
-    element: HomePage
+    element: <HomePage />
   }, 
   {
-    path: '/characters',
-    element: Characters
+    path: '/characters/',
+    exact: false,
+    element: <Characters />
   },
   {
     path: '/characters/:id',
-    element: PersonPage
+    element: <PersonPage />
   },
   {
     path: '*',
-    exact: false,
-    element: NotFoundPage
+    element: <NotFoundPage />
   }
 ]
 
